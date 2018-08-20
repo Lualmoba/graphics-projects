@@ -42,3 +42,9 @@ build
 # Vim
 *~
 *.sw[a-p]
+
+# Visual Studio
+*.suo
+*.csproj.user
+*.vbproj.user
+
