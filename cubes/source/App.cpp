@@ -57,6 +57,8 @@ void App::onInit() {
 
     setFrameDuration(1.0f / 60.0f);
 
+    debugPrintf("Target frame rate = %f Hz\n", realTimeTargetDuration());
+
     // Call setScene(shared_ptr<Scene>()) or setScene(MyScene::create()) to replace
     // the default scene here.
     
