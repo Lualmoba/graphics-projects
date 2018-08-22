@@ -1,0 +1,40 @@
+// -*- c++ -*-
+
+{
+	name = "SceneOne";
+
+    models = {
+        cubeModel = ArticulatedModel::Specification {
+            filename = "model/crate/crate.obj";
+			stripMaterials = true;
+			preprocess = {
+                moveCenterToOrigin();
+            };
+        };
+    };
+
+    entities = {
+        skybox = Skybox {
+            texture = "cubemap/whiteroom/whiteroom-*.png";
+		};
+
+		sun = Light {
+			attenuation = (0, 0 , 1);
+			bulbPower = Power3(4e+006);
+			frame = CFrame::fromXYZYPRDegrees(-15, 207, -41, -164, -77, 77);
+			shadowMapSize = Vector2int16(2048, 2048);
+			spotHalfAngleDegrees = 5;
+			rectangular = true;
+			type = "SPOT";
+		};
+
+        whiteCube = VisibleEntity {
+            model = "cubeModel";
+			frame = CFrame::fromXYZYPRDegrees(0, 0, -2, 45, 0, 0);
+        };
+
+        camera = Camera{
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 5);
+        };
+    };
+};
