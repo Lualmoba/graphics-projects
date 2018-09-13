@@ -1,5 +1,6 @@
 /** \file App.cpp */
 #include "App.h"
+#include "staircase_generator.h"
 
 // Tells C++ to invoke command-line main() function even on OS X and Win32.
 G3D_START_AT_MAIN();
@@ -56,6 +57,10 @@ void App::onInit() {
     GApp::onInit();
 
     setFrameDuration(1.0f / 60.0f);
+    
+
+    generateStaircase();
+
 
     debugPrintf("Target frame rate = %f Hz\n", realTimeTargetDuration());
 
